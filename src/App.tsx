@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import GridFloristeria from './components/grid/grid';
+import Menu from './components/menu/menu';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import DetallesFlor from './components/detalles/detallesItem';
+import { FlorProvider } from './context/FlorContext';
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
+      <Menu></Menu>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+        <Switch>
+          <FlorProvider>
+          <Route path='/' component={GridFloristeria} exact></Route>
+          <Route path='/flor' component={DetallesFlor} exact></Route>
+          </FlorProvider>
+        </Switch>
+        
       </header>
     </div>
+    </BrowserRouter>
   );
 }
 
