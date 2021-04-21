@@ -3,11 +3,13 @@ import { Flor } from "../../../Interfaces/Flor";
 import { FiltroContext } from "../../../context/FiltroBusquedaContext";
 import { FlorContext } from "../../../context/FlorContext";
 import { Link } from "react-router-dom";
+import { BroadCumpContext } from "../../../context/BroadCumpContext";
 const URLFLORESAPI = "https://dulces-petalos.herokuapp.com/api/product";
 
 function FloresGrid() {
   const { setFlor } = useContext(FlorContext);
   const { textoFiltro } = useContext(FiltroContext);
+  const { setRuta } = useContext(BroadCumpContext);
 
   const [flores, setFlores] = useState<Flor[]>([]);
 
@@ -37,9 +39,10 @@ function FloresGrid() {
         {flores.map((flor, index) => {
           return (
             <Link
-              to="/flor"
+              to="/floristeria/flor"
               onClick={() => {
                 setFlor(flores[index]);
+                setRuta("/floristeria/" + flor.name);
               }}
             >
               <div className="col mb-5">

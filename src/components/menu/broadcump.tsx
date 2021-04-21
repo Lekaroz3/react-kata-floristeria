@@ -1,15 +1,41 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { BroadCumpContext } from "../../context/BroadCumpContext";
+
 function BroadCump() {
+  const { ruta, setRuta } = useContext(BroadCumpContext);
+  const rutas: string[] = ruta.split("/");
+
   return (
     <ol className="breadcrumb">
-      <li className="breadcrumb-item">
-        <a href="#">Home</a>
-      </li>
-      <li className="breadcrumb-item">
-        <a href="#">Library</a>
-      </li>
-      <li className="breadcrumb-item active" aria-current="page">
-        Data
-      </li>
+      {rutas.map((ruta, index) => {
+        if (!ruta) return;
+        let claseLista =
+          rutas.length - 1 === index
+            ? "breadcrumb-item active"
+            : "breadcrumb-item";
+
+        if (claseLista.includes("active")) {
+          return (
+            <li className={claseLista + " text-capitalize"} aria-current="page">
+              {ruta}
+            </li>
+          );
+        } else {
+          return (
+            <Link
+              className={claseLista + " text-capitalize"}
+              to={"/" + ruta}
+              onClick={() => {
+                setRuta(ruta);
+                console.log(ruta);
+              }}
+            >
+              {ruta}
+            </Link>
+          );
+        }
+      })}
     </ol>
   );
 }

@@ -9,3 +9,8 @@ export type FlorContextState = {
   flor: Flor;
   setFlor: (flor: Flor) => void;
 };
+
+export type BroadCumpContextState = {
+  ruta: string;
+  setRuta: (ruta: string) => void;
+};

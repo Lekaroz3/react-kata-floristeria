@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { BroadCumpContext } from "../../context/BroadCumpContext";
+import BroadCump from "./broadcump";
 
 function Menu() {
+  const { setRuta } = useContext(BroadCumpContext);
   return (
     <nav className="navbar navbar-light bg-light">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link
+          className="navbar-brand"
+          to="/floristeria"
+          onClick={() => setRuta("/floristeria")}
+        >
           <img
             src="https://image.freepik.com/vector-gratis/diseno-logotipo-flor_18099-123.jpg"
             alt=""
@@ -15,6 +22,7 @@ function Menu() {
           />
           FlorBiko2
         </Link>
+        <BroadCump></BroadCump>
       </div>
     </nav>
   );

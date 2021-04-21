@@ -1,14 +1,20 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { BroadCumpContext } from "../../context/BroadCumpContext";
 import { FlorContext } from "../../context/FlorContext";
 
 function DetallesFlor() {
   const { flor } = useContext(FlorContext);
+  const { setRuta } = useContext(BroadCumpContext);
   return (
     <div className="container-fluid mb-5 px-5 ">
       <div className="row mb-3">
         <div className="col-12">
-          <Link to="/" className="ml-auto">
+          <Link
+            to="/floristeria"
+            className="ml-auto"
+            onClick={() => setRuta("/floristeria")}
+          >
             <button className="btn btn-primary">Atrás</button>
           </Link>
         </div>
