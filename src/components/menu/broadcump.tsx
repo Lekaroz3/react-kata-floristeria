@@ -17,13 +17,18 @@ function BroadCump() {
 
         if (claseLista.includes("active")) {
           return (
-            <li className={claseLista + " text-capitalize"} aria-current="page">
+            <li
+              key={index}
+              className={claseLista + " text-capitalize"}
+              aria-current="page"
+            >
               {ruta}
             </li>
           );
         } else {
           return (
             <Link
+              key={index}
               className={claseLista + " text-capitalize"}
               to={"/" + ruta}
               onClick={() => {

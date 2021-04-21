@@ -39,6 +39,7 @@ function FloresGrid() {
         {flores.map((flor, index) => {
           return (
             <Link
+              key={index}
               to="/floristeria/flor"
               onClick={() => {
                 setFlor(flores[index]);
