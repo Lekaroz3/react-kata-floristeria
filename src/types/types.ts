@@ -1,13 +1,11 @@
 import { Flor } from "../Interfaces/Flor";
 
 export type FiltroContextState = {
-    data: string
-    setData: (name: string) => void;
-  };
+  textoFiltro: string;
+  setTextoFiltro: (texto: string) => void;
+};
 
-  export type FlorContextState = {
-    flor: Flor
-    setFlor: (flor: Flor) => void;
-  };
-
-
+export type FlorContextState = {
+  flor: Flor;
+  setFlor: (flor: Flor) => void;
+};

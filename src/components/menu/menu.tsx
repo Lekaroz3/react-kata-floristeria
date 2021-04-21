@@ -5,7 +5,7 @@ function Menu() {
   return (
     <nav className="navbar navbar-light bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img
             src="https://image.freepik.com/vector-gratis/diseno-logotipo-flor_18099-123.jpg"
             alt=""
@@ -14,7 +14,7 @@ function Menu() {
             className="d-inline-block align-text-top mr-2"
           />
           FlorBiko2
-        </a>
+        </Link>
       </div>
     </nav>
   );

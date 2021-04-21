@@ -1,18 +1,16 @@
-import { createContext, useState } from "react";
 import BuscadorItems from "./Busqueda/buscador";
-import ItemsGrid from "./Items/itemsGrid";
-import {FiltroBusquedaProvider} from '../../context/FiltroBusquedaContext'
+import FloresGrid from "./Items/floresGrid";
+import { FiltroBusquedaProvider } from "../../context/FiltroBusquedaContext";
 
-function GridFloristeria(){
-    
-    return(
-        <div className="container">
-            <FiltroBusquedaProvider>
-                <BuscadorItems></BuscadorItems>
-                <ItemsGrid></ItemsGrid>
-            </FiltroBusquedaProvider>
-        </div>
-    )
+function GridFloristeria() {
+  return (
+    <div className="container">
+      <FiltroBusquedaProvider>
+        <BuscadorItems></BuscadorItems>
+        <FloresGrid></FloresGrid>
+      </FiltroBusquedaProvider>
+    </div>
+  );
 }
 
-export default GridFloristeria
+export default GridFloristeria;
